@@ -1,0 +1,40 @@
+clear
+center() {
+  termwidth=$(stty size | cut -d" " -f2)
+  padding="$(printf '%0.1s' ={1..500})"
+  printf '%*.*s %s %*.*s\n' 0 "$(((termwidth-2-${#1})/2))" "$padding" "$1" 0 "$(((termwidth-1-${#1})/2))" "$padding"
+}
+source ./.logo
+echo
+ban
+echo -e "\e[92m"
+center "INSTALLATION"
+echo -e "\e[34mSTABLE CONNECTION [\e[92m✓\e[34m]\e[0m"
+sleep 1.0
+echo -e "\e[34mCHECKING ENVIRONMENT [\e[92m✓\e[34m]\e[0m"
+#dpkg --configure -a
+sleep 1.0
+echo -e "\e[34mPACKAGES BEING INSTALLED WAIT....\e[0m"
+apt-get upgrade -y >/dev/null 2>&1
+apt-get update -y >/dev/null 2>&1
+pkg install git -y >/dev/null 2>&1
+pkg install wget -y >/dev/null 2>&1
+pip install lolcat >/dev/null 2>&1
+python -m pip install aiohttp >/dev/null 2>&1
+python -m pip install requests >/dev/null 2>&1
+pkg install curl -y >/dev/null 2>&1
+pkg install pv -y >/dev/null 2>&1
+pkg install figlet -y >/dev/null 2>&1
+pkg install python3 -y >/dev/null 2>&1
+pip install colorama >/dev/null 2>&1
+
+echo -e "\e[34mPACKAGES INSTALLED [\e[92m✓\e[34m]\e[0m"
+sleep 1.0
+echo -e "\e[92m"
+center "LAUNCHING MASTER-BOMBER2.0"
+echo -e "\e[34mFINALIZING MASTER-BOMBER2.O [\e[92m✓\e[34m]\e[0m"
+am start -a android.intent.action.VIEW -d https://t.me/antitoolz > /dev/null 2>&1
+sleep 2.0
+echo -e "\e[34mLAUNCHING.....[\e[92m✓\e[34m]\e[0m"
+sleep 2.0
+rm $HOME/m-bomber2.O/setup >/dev/null 2>&1
