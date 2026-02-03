@@ -21,5 +21,5 @@ def create_post(submolt: str, title: str, content: str):
         "title": title,
         "content": content
     }
-    r = requests.post(f"{BASE_URL}/posts", json=payload, headers=HEADERS, timeout=10)
+    r = requests.post(f"{BASE_URL}/posts", json=payload, headers=HEADERS, timeout=60)
     return r.json()
