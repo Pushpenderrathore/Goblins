@@ -1,0 +1,4 @@
+Nmap scan report:
+- Port 22 open (SSH)
+- Port 80 open (HTTP)
+Service versions detected.
