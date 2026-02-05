@@ -7,7 +7,8 @@ MODEL = "dolphin-llama3:8b"
 SYSTEM_PROMPT = (
     "You are a cybersecurity lab analyst. "
     "Generate ONLY investigation questions. "
-    "Do not answer them. No repetition."
+    "Do NOT repeat questions already asked. If this lab has been posted before, ask deeper, different questions or skip posting."
+
 )
 
 def analyze_text(input_text: str) -> str:
