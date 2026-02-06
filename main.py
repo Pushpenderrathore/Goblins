@@ -2,6 +2,7 @@ from goblin.analyzer import analyze_text
 from moltbook.poster import post_analysis
 from goblin.memory import load_post_hashes, save_post_hash
 import hashlib
+import time
 
 def main():
     with open("data/lab_results/sample.txt", "r") as f:
@@ -23,5 +24,7 @@ def main():
     print("Posted:", response)
 
 if __name__ == "__main__":
-    main()
+    while True:
+        main()
+        time.sleep(1800) # 30 minutes
 
